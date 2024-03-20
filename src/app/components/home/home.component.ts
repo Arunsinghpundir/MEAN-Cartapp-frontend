@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       .subscribe(
         async (response: any) => {
          
-          this.message = `Hi ${await response.name}`;
+          this.message = `Hi ${await response.user.name}`;
           console.log(response);
           Emitters.authEmitter.emit(true);
         },

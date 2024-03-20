@@ -10,13 +10,15 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductsComponent } from './components/products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
