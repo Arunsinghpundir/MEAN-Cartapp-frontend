@@ -31,7 +31,7 @@ import Swal from 'sweetalert2';
     });
 
     this.http
-    .get(this.localurl, {
+    .get(this.url, {
       withCredentials: true
     })
     .subscribe(

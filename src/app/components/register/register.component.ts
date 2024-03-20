@@ -90,7 +90,7 @@ export class RegisterComponent implements OnInit {
       } else if (!this.validateEmail(userData.email)) {
         Swal.fire("Error", "Invalid email address");
       } else {
-       this.http.post(this.localurl,userData,{
+       this.http.post(this.url,userData,{
         withCredentials:true
        })
        .subscribe(()=>this.router.navigate(['/']),(err)=>{
