@@ -1,1 +1,49 @@
-<p>products works!</p>
+<!-- <div *ngIf="products && products.length > 0">
+    <h2>Products</h2>
+    <div class="product-list">
+      <div *ngFor="let product of products" class="product-card">
+        <div class="product-image">
+          <img [src]="product.image" alt="Product Image">
+        </div>
+        <div class="product-details">
+          <h3>{{ product.title }}</h3>
+          <p><strong>Price:</strong> ${{ product.price }}</p>
+          <p><strong>Discount Percentage:</strong> {{ product.discountPercentage }}%</p>
+          <p><strong>Rating:</strong> {{ product.rating }}</p>
+          <p><strong>Brand:</strong> {{ product.brand }}</p>
+          <p><strong>Category:</strong> {{ product.category }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="products && products.length === 0">
+    <p>No products available</p>
+  </div>
+   -->
+   <div *ngIf="!authenticated">
+        <h2>Please Login first</h2>
+  </div> 
+   <div class="container mt-4">
+    <div *ngIf="products && products.length > 0">
+      <h2>Products</h2>
+      <div class="row">
+        <div *ngFor="let product of products" class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img [src]="product.thumbnail" class=" img card-img-top" alt="Product Image">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+              <p class="card-text"><strong>Discount Percentage:</strong> {{ product.discountPercentage }}%</p>
+              <p class="card-text"><strong>Rating:</strong> {{ product.rating }}</p>
+              <p class="card-text"><strong>Brand:</strong> {{ product.brand }}</p>
+              <p class="card-text"><strong>Category:</strong> {{ product.category }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="products && products.length === 0" class="mt-4">
+      <p>No products available</p>
+    </div>
+  </div>
+  

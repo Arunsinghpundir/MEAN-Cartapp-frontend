@@ -1,9 +1,9 @@
-<form [formGroup]="form" (submit)="submit()">
+<form [formGroup]="form" id="regBox" (submit)="submit()">
     <h1 class="h3 mb-3 fw-normal">Please Register</h1>
-    <input formControlName="name" class="form-control" placeholder="Name" required/>
-    <input formControlName="email" class="form-control" placeholder="Email" required/>
-    <input formControlName="password" class="form-control" placeholder="Password" required/>
-    <button type="submit" class="w-100 btn btn-lg btn-primary">Submit</button>
+    <input id="input1" formControlName="name" class="form-control" placeholder="Name" required/>
+    <input  id="input3" formControlName="email" class="form-control" placeholder="Email" required/>
+    <input  id="input2" formControlName="password" class="form-control" placeholder="Password" required/>
+    <button id="regBtn" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
 </form>
 
   
