@@ -22,7 +22,7 @@ import Swal from 'sweetalert2';
     private http: HttpClient,
     private router: Router
   ) { }
-  url:string = 'https://mean-cartapp-backend.onrender.com/api/user';
+  url:string = 'https://mean-cartapp-backend.onrender.com/api/products';
   localurl = 'http://localhost:5000/api/products';
   authenticated = false;
   ngOnInit(): void {

@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit{
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
   }
+  url = 'https://mean-cartapp-backend.onrender.com/api/login';
+   localurl = 'http://localhost:5000/api/login'
   submit(): void {
 
     const userData = this.form.value;
@@ -39,7 +41,7 @@ export class LoginComponent implements OnInit{
       } else if (!this.validateEmail(userData.email)) {
         Swal.fire("Error", "Invalid email address");
       } else {
-        this.http.post("http://localhost:5000/api/login",userData,{
+        this.http.post(this.url,userData,{
           withCredentials:true
         })
         .subscribe(

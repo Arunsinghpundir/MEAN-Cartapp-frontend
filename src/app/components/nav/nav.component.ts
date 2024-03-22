@@ -35,7 +35,8 @@ export class NavComponent implements OnInit {
   authenticated = false;
 
   constructor(private http: HttpClient) { }
-
+  url = 'https://mean-cartapp-backend.onrender.com/api/login';
+  localurl = 'http://localhost:5000/api/login'
   ngOnInit(): void {
     Emitters.authEmitter.subscribe((auth: boolean) => {
       this.authenticated = auth;
@@ -43,7 +44,7 @@ export class NavComponent implements OnInit {
   }
 
   logout(): void {
-    this.http.post('http://localhost:5000/api/logout', {}, { withCredentials: true })
+    this.http.post(this.url, {}, { withCredentials: true })
       .subscribe(() => this.authenticated = false);
   }
 }

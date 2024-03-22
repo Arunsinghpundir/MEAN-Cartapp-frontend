@@ -8,20 +8,19 @@ import { Emitters } from '../../emitters/emitter';
 })
 export class HomeComponent implements OnInit {
   message = '';
-   url:string = 'https://mean-cartapp-backend.onrender.com/api/user';
+   url = 'https://mean-cartapp-backend.onrender.com/api/user';
    localurl = 'http://localhost:5000/api/user'
   constructor(private http: HttpClient) {}
  
   ngOnInit(): void {
     this.http
-      .get(this.url, {
+      .post(this.url, {
         withCredentials: true
-      })
-      .subscribe(
+      }).subscribe( 
         async (response: any) => {
          
           this.message = `Hi ${await response.user.name}`;
-          console.log(response);
+          console.log("response",response);
           Emitters.authEmitter.emit(true);
         },
         (err) => {
